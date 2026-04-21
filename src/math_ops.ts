@@ -24,5 +24,8 @@ export function divide(a: number, b: number): number {
 }
 
 export function verboseDescription(): string {
-  return 'This is a deliberately very long descriptive message designed to trip ESLint max-len rule at 100 chars.';
+  return (
+    'This is a deliberately very long descriptive message designed to trip ESLint ' +
+    'max-len rule at 100 chars.'
+  );
 }
