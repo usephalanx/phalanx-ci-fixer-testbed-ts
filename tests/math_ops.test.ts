@@ -1,4 +1,4 @@
-import { add, subtract, multiply, divide } from '../src/math_ops';
+import { add, subtract, multiply, divide, percentage, average } from '../src/math_ops';
 
 describe('add', () => {
   it('adds positive numbers', () => {
@@ -42,5 +42,23 @@ describe('divide', () => {
   });
   it('throws on zero denominator', () => {
     expect(() => divide(1, 0)).toThrow('cannot divide by zero');
+  });
+});
+
+describe('percentage', () => {
+  it('calculates a normal percentage', () => {
+    expect(percentage(25, 200)).toBe(12.5);
+  });
+  it('throws on zero whole', () => {
+    expect(() => percentage(10, 0)).toThrow('cannot compute percentage of zero');
+  });
+});
+
+describe('average', () => {
+  it('averages a non-empty array', () => {
+    expect(average([2, 4, 6])).toBe(4);
+  });
+  it('throws on empty array', () => {
+    expect(() => average([])).toThrow('cannot average an empty list');
   });
 });
