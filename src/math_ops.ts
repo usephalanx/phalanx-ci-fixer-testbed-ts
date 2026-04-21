@@ -22,3 +22,17 @@ export function divide(a: number, b: number): number {
   }
   return a / b;
 }
+
+export function percentage(part: number, whole: number): number {
+  if (whole === 0) {
+    throw new Error('cannot compute percentage of zero');
+  }
+  return (part / whole) * 100;
+}
+
+export function average(values: number[]): number {
+  if (values.length === 0) {
+    throw new Error('cannot average an empty list');
+  }
+  return values.reduce((a, b) => a + b, 0) / values.length;
+}
